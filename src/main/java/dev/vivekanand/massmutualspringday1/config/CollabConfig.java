@@ -10,12 +10,12 @@ import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class CollabConfig {
-    @Bean
+    @Bean(name = "stripe")
     public PaymentProcessor provideStripe() {
         return new StripePaymentProcessor();
     }
 
-    @Bean
+    @Bean(name = "upi")
     public PaymentProcessor provideUpi() {
         return new UpiPaymentProcessor();
     }
