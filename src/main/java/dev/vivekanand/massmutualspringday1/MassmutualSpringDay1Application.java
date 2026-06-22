@@ -16,8 +16,8 @@ public class MassmutualSpringDay1Application {
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(MassmutualSpringDay1Application.class, args);
 
-        List<PaymentProcessor> beans = new ArrayList<>(context.getBeansOfType(PaymentProcessor.class).values());
-        PaymentProcessor paymentProcessor = beans.get(0);
+
+        PaymentProcessor paymentProcessor = context.getBean(PaymentProcessor.class);
         boolean paymentStatus = paymentProcessor.processPayment(100.0);
         System.out.println("Payment status: " + paymentStatus);
     }

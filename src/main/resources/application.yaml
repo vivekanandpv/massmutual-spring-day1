@@ -1,3 +1,7 @@
 spring:
   application:
     name: massmutual-spring-day1
+
+payment:
+  provider:
+    upi
