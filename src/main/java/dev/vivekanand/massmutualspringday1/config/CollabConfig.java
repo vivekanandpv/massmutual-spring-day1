@@ -12,15 +12,15 @@ import org.springframework.core.annotation.Order;
 
 @Configuration
 public class CollabConfig {
-    @Bean
-    @ConditionalOnProperty(name = "payment.provider", havingValue = "stripe")
-    public PaymentProcessor provideStripe() {
-        return new StripePaymentProcessor();
-    }
-
-    @Bean
-    @ConditionalOnProperty(name = "payment.provider", havingValue = "upi")
-    public PaymentProcessor provideUpi() {
-        return new UpiPaymentProcessor();
-    }
+//    @Bean
+//    @ConditionalOnProperty(name = "payment.provider", havingValue = "stripe")
+//    public PaymentProcessor provideStripe() {
+//        return new StripePaymentProcessor();
+//    }
+//
+//    @Bean
+//    @ConditionalOnProperty(name = "payment.provider", havingValue = "upi")
+//    public PaymentProcessor provideUpi() {
+//        return new UpiPaymentProcessor();
+//    }
 }
