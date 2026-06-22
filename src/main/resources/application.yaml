@@ -4,4 +4,4 @@ spring:
 
 payment:
   provider:
-    upi
+    region: ${PAYMENT_PROVIDER_REGION}
