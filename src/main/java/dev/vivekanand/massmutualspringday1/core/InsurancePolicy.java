@@ -11,18 +11,17 @@ import org.springframework.stereotype.Component;
 public class InsurancePolicy implements FinancialInstrument {
     private static final Logger LOGGER = LoggerFactory.getLogger(InsurancePolicy.class);
 
-    @Autowired
     private PaymentProcessor paymentProcessor;
-
-//    public InsurancePolicy(PaymentProcessor paymentProcessor) {
-//
-//        this.paymentProcessor = paymentProcessor;
-//    }
 
     @Override
     public void pay() {
         LOGGER.info("Processing the payment");
         paymentProcessor.processPayment(1000);
         LOGGER.info("Finished processing the payment");
+    }
+
+    @Autowired
+    public void setPaymentProcessor(PaymentProcessor paymentProcessor) {
+        this.paymentProcessor = paymentProcessor;
     }
 }
