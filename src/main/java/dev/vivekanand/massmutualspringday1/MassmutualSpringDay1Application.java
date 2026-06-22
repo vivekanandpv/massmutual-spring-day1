@@ -6,13 +6,16 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import java.util.Map;
+
 @SpringBootApplication
 public class MassmutualSpringDay1Application {
 
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(MassmutualSpringDay1Application.class, args);
 
-        PaymentProcessor paymentProcessor = context.getBean("upi" ,PaymentProcessor.class);
+        Map<String, PaymentProcessor> beans = context.getBeansOfType(PaymentProcessor.class);
+        PaymentProcessor paymentProcessor = beans.get("stripe");
         boolean paymentStatus = paymentProcessor.processPayment(100.0);
         System.out.println("Payment status: " + paymentStatus);
     }
